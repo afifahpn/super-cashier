@@ -33,6 +33,10 @@ while (True):
             nama_item = input("Nama Item: ")
             harga_item = input("Harga Item Baru: ")
             update_item_price(nama_item, harga_item)
-    elif cust_menu_input == '3':
-        :
-        print("delete")
+    elif cust_menu_input == '4':
+        print("1. hapus salah satu \n2. update jumlah item \n3. update harga item")
+        cust_edit = input("Silahkan Pilih: ")
+        if cust_edit == '1':
+            nama_item = input("Nama Item: ")
+            nama_baru = input("Nama Item Baru: ")
+            update_item_name(nama_item, nama_baru)
