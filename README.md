@@ -15,9 +15,7 @@
 
 # Flowchart
 
-![customer journey@2x](https://user-images.githubusercontent.com/55918778/232315551-7797a783-bec1-44c3-87c8-4be2e2175025.png)
-
-
+![customer journey@2x (1)](https://user-images.githubusercontent.com/55918778/232318051-e0515406-991a-4c52-863b-f7b226789efd.png)
 
 # Deskripsi Task
 1. Module 'start_db.py' digunakan untuk membuat koneksi ke sqlite dan untuk membuat database.
