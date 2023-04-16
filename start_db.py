@@ -1,33 +1,31 @@
-# import library sqlalchemy untuk menginisiasi database yg ingin dipakai
-import sqlalchemy
-from sqlalchemy import create_engine, text
-
-# konfigurasi database,
-# buat variabel konfigurasi sebagai konstan,
-# buat sqlite sebagai engine
-ENGINE = create_engine("sqlite:///super-cashier.db")
-
-# koneksi database
-# buat variabel koneksi sebagai kontan
-CONN = ENGINE.connect()
-
-# fungsi untuk membuat table pada database
+# import library sqlite untuk menginisiasi database yg ingin dipakai
+import sqlite3
 
 
-def create_table():
-    query_buat_table = """
-    CREATE TABLE 'transaction'(
-        no_id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nama_item STRING,
+# membuat koneksi dengan file sql
+conn = sqlite3.connect("super_cashier.db")
+
+# untuk mengeksekusi perintah sql
+cursor = conn.cursor()
+
+# query untuk membuat tabel
+query_buat_table = """ CREATE TABLE IF NOT EXISTS 'transaction'(
+        no_id TEXT,
+        nama_item TEXT,
         jumlah_item INTEGER,
         harga INTEGER,
         total_harga INTEGER,
         diskon INTEGER,
-        harga_diskon INTEGER
-    )
+        harga_diskon INTEGER);
     """
-    # eksekusi query
-    CONN.execute(text(query_buat_table))
+# eksekusi query
+cursor.execute(query_buat_table)
 
+# query untuk select
+query_select = """ SELECT * FROM 'transaction'"""
 
-create_table()
+# eksekusi query
+cursor.execute(query_select)
+
+for row in cursor.fetchall():
+    print(row)
