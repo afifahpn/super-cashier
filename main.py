@@ -1,3 +1,9 @@
+"""
+Modul main.py ini digunakan sebagai tampilan yang dilihat pertama kali oleh user.
+modul ini berisi menu super cashier
+"""
+
+# import file modul.py agar file modul.py dapat dipanggil di file main.py
 from modul import *
 
 while (True):
@@ -9,7 +15,6 @@ while (True):
     4. delete item
     5. chek out
     """)
-    # try:
     cust_menu_input = input("""Silahkan Pilih: """)
     if cust_menu_input == '1':
         cust_input = input("Silahkan Masukkan id transaksi anda: ")
@@ -45,7 +50,5 @@ while (True):
             reset_transaction()
     elif cust_menu_input == '5':
         check_order()
-    # else:
-    #     print("Ada kesalahan input, silahkan dicoba kembali")
-    # except:
-    #     print("Ada kesalahan input, silahkan dicoba kembali")
+    else:
+        print("Ada kesalahan input, silahkan dicoba kembali")
